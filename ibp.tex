@@ -1,0 +1,38 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\newtheorem{thm}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[section]
+
+\title{Integration by Parts}
+\author{Gordon Chen}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\begin{thm}
+    Let u and v be differentiable functions of x. Then the Integration by Parts formula is:
+
+    \[ \int u dv = uv - \int v du . \]
+\end{thm}
+
+\begin{ex}
+    Evaluate \( \displaystyle{\int x e^x dx} \). We will use Integration by Parts.
+
+    \noindent Let \( u=x \) and \( dv = e^x \), so \( du = dx \) and \( v = e^x \). Then
+
+    \begin{align*}
+        \int x e^x dx &= uv - \int v du \\
+                      &= x e^x - \int e^x dx \\
+                      &= x e^x - e^x +C . \\
+    \end{align*}
+\end{ex}
+
+
+
+\end{document}
