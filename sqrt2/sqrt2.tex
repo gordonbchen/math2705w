@@ -1,5 +1,5 @@
 \documentclass[12pt, letterpaper]{article}
-\usepackage{amsthm, amsmath, amssymb, graphicx, hyperref}
+\usepackage{amsthm, amsmath, amssymb, graphicx, hyperref, url}
 \usepackage[utf8]{inputenc}
 
 \newtheorem{thm}{Theorem}
@@ -13,7 +13,7 @@
 
 \title{The Irrationality of \(\sqrt{2}\)}
 \author{Gordon Chen}
-\date{}
+\date{Fall 2026}
 
 \begin{document}
 \maketitle
@@ -41,8 +41,6 @@ And now we can define the concept of irrationality.
 
 
 \section{The Proof} \label{sec3}
-We are finally ready to show our main result.
-
 \begin{lemma} \label{lemma_div2}
     If \(2 | n^2\) for \(n \in \mathbb{Z}\), then \(2|n\).
 
@@ -57,12 +55,13 @@ We are finally ready to show our main result.
     \end{proof}
 \end{lemma}
 
+We are finally ready to show our main result.
+
 \begin{thm}
     The real number \(\sqrt{2}\) is irrational.
 
     \begin{proof}
         Let \(\alpha = \sqrt{2}\). Then \(\alpha^2 = 2\).
-
         Suppose \(\alpha\) is rational. Then \(\alpha = \frac{m}{n}\), where \(m \in \mathbb{Z}\)
         and \(n \in \mathbb{N}\), and \(\frac{m}{n}\)
         in lowest terms, meaning that \(\gcd(m, n) = 1\). Then \((\frac{m}{n}) ^ 2 = 2\), so
@@ -78,11 +77,17 @@ We are finally ready to show our main result.
 
 \section{Irrational Numbers} \label{sec4}
 
+We know that the square root of any prime number is irrational by generalizing
+Lemma \ref{lemma_div2} into Euclid's Lemma \cite{euclid_wiki}.
+We also know that transcendental numbers \cite{transcendental_wiki} like \(\pi\) and \(e\)
+are irrational because transcendental numbers are not algebraic, and rational numbers are algebraic.
 
-\begin{thebibliography}{9}
-\bibitem{latexcompanion} Michel Goossens, Frank Mittelbach, and Alexander Samarin. \textit{The \LaTeX\ Companion}. Addison-Wesley, Reading, Massachusetts, 1993.
-\bibitem{einstein} Albert Einstein. \textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) [\textit{On the electrodynamics of moving bodies}]. Annalen der Physik, 322(10):891–921, 1905.
-\bibitem{knuthwebsite} Knuth: Computers and Typesetting,\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
-\end{thebibliography}
+The Pythagoreans are credited with the discovery that \(\sqrt{2}\) is irrational \cite{sqrt2_wiki}.
+It was said that Hippasus of Metapontum was drowned at sea for telling those not in the
+Pythagorean Society about the irrationality of \(\sqrt{2}\) \cite{hippasus_wiki}.
+
+
+\bibliographystyle{plain}
+\bibliography{refs}
 
 \end{document}
