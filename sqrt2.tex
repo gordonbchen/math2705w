@@ -1,0 +1,87 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{amsthm, amsmath, amssymb, graphicx, hyperref}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\title{The Irrationality of \(\sqrt{2}\)}
+\author{Gordon Chen}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Introduction} \label{intro}
+In this short paper we will shor that \(\sqrt{2}\) is an irrational number.
+In Section \ref{sec2}, we will introduce the concepts of rational and irrational numbers.
+In Section \ref{sec3}, we will provide a proof of the fact that \(\sqrt{2}\) is irrational.
+Finally, in Section \ref{sec4}, we will discuss what we know about the other numbers that are
+known to be irrational.
+
+
+\section{Preliminaries} \label{sec2}
+First, we define the rational numbers.
+
+\begin{defn}
+    The number is rational if it is a member of the set
+    \[ \mathbb{Q} = \{\frac{m}{n} : m \in \mathbb{Z}, n \in \mathbb{N}\}.\]
+\end{defn}
+
+And now we can define the concept of irrationality.
+\begin{defn}
+    A real number \(\alpha \in \mathbb{R}\) is irrational if \(\alpha \notin \mathbb{Q}\).
+\end{defn}
+
+
+\section{The Proof} \label{sec3}
+We are finally ready to show our main result.
+
+\begin{lemma} \label{lemma_div2}
+    If \(2 | n^2\) for \(n \in \mathbb{Z}\), then \(2|n\).
+
+    \begin{proof}
+        We proceed by contrapositive. Let \(n \in \mathbb{Z}\) and assume that \(2 \nmid n\).
+        Then \(n\) is odd, so it can be written as \(n = 2k + 1\) for some \(k \in \mathbb{Z}\).
+        Then \(n^2  = (2k+1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1\). Since \(\mathbb{Z}\) is closed
+        under multiplication and addition, \(2k^2 + 2k \in \mathbb{Z}\). Let \(m = 2k^2 + 2k\).
+        Then \(n^2 = 2m + 1\), so \(n^2\) is odd, and \(2 \nmid n^2\).
+        Thus we have shown by contrapositive that
+        if \(2 | n^2\) for \(n \in \mathbb{Z}\), then \(2|n\).
+    \end{proof}
+\end{lemma}
+
+\begin{thm}
+    The real number \(\sqrt{2}\) is irrational.
+
+    \begin{proof}
+        Let \(\alpha = \sqrt{2}\). Then \(\alpha^2 = 2\).
+
+        Suppose \(\alpha\) is rational. Then \(\alpha = \frac{m}{n}\), where \(m \in \mathbb{Z}\)
+        and \(n \in \mathbb{N}\), and \(\frac{m}{n}\)
+        in lowest terms, meaning that \(\gcd(m, n) = 1\). Then \((\frac{m}{n}) ^ 2 = 2\), so
+        \(m^2 = 2n^2\). Then \(2 | m^2\), so by Lemma \ref{lemma_div2}, we have that \(2 | m\).
+        Then \(m = 2m'\) for some \(m' \in \mathbb{Z}\), so \(4m'^2 = 2n^2\), so \(2m'^2 = n^2\).
+        Then \(2 | n^2\), so again by Lemma \ref{lemma_div2}, we have that \(2 | n\).
+        But this is a contradiction because we assumed that \(\frac{m}{n}\) was written in lowest
+        terms, that \(m\) and \(n\) share no common divisors, but found that both are divisible by
+        \(2\). Thus by contradiction we have shown that \(\sqrt{2}\) is not rational, so it must be irrational.
+    \end{proof}
+\end{thm}
+
+
+\section{Irrational Numbers} \label{sec4}
+
+\begin{thebibliography}{9}
+\bibitem{latexcompanion} Michel Goossens, Frank Mittelbach, and Alexander Samarin. \textit{The \LaTeX\ Companion}. Addison-Wesley, Reading, Massachusetts, 1993.
+\bibitem{einstein} Albert Einstein. \textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) [\textit{On the electrodynamics of moving bodies}]. Annalen der Physik, 322(10):891–921, 1905.
+\bibitem{knuthwebsite} Knuth: Computers and Typesetting,\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+\end{thebibliography}
+
+\end{document}
