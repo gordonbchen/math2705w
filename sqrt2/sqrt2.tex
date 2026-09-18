@@ -30,7 +30,7 @@ known to be irrational.
 First, we define the rational numbers.
 
 \begin{defn}
-    The number is rational if it is a member of the set
+    A number is rational if it is a member of the set
     \[ \mathbb{Q} = \{\frac{m}{n} : m \in \mathbb{Z}, n \in \mathbb{N}\}.\]
 \end{defn}
 
@@ -64,12 +64,13 @@ We are finally ready to show our main result.
         Let \(\alpha = \sqrt{2}\). Then \(\alpha^2 = 2\).
         Suppose \(\alpha\) is rational. Then \(\alpha = \frac{m}{n}\), where \(m \in \mathbb{Z}\)
         and \(n \in \mathbb{N}\), and \(\frac{m}{n}\)
-        in lowest terms, meaning that \(\gcd(m, n) = 1\). Then \((\frac{m}{n}) ^ 2 = 2\), so
+        is in lowest terms, meaning that \(\gcd(m, n) = 1\). Then \((\frac{m}{n}) ^ 2 = 2\), so
         \(m^2 = 2n^2\). Then \(2 | m^2\), so by Lemma \ref{lemma_div2}, we have that \(2 | m\).
         Then \(m = 2m'\) for some \(m' \in \mathbb{Z}\), so \(4m'^2 = 2n^2\), so \(2m'^2 = n^2\).
         Then \(2 | n^2\), so again by Lemma \ref{lemma_div2}, we have that \(2 | n\).
         But this is a contradiction because we assumed that \(\frac{m}{n}\) was written in lowest
-        terms, that \(m\) and \(n\) share no common divisors, but found that both are divisible by
+        terms, that \(m\) and \(n\) share no common divisors greater than 1,
+        but found that both are divisible by
         \(2\). Thus by contradiction we have shown that \(\sqrt{2}\) is not rational, so it must be irrational.
     \end{proof}
 \end{thm}
