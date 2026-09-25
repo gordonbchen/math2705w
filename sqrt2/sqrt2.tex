@@ -31,7 +31,7 @@ First, we define the rational numbers.
 
 \begin{defn}
     A number is rational if it is a member of the set
-    \[ \mathbb{Q} = \left\{\frac{m}{n} : m \in \mathbb{Z}, n \in \mathbb{N}\right\}.\]
+    \[ \mathbb{Q} = \left\{\frac{m}{n} : m, n \in \mathbb{Z} \text{ and } n \ne 0 \right\}.\]
 \end{defn}
 
 And now we can define the concept of irrationality.
@@ -39,19 +39,34 @@ And now we can define the concept of irrationality.
     A real number \(\alpha \in \mathbb{R}\) is irrational if \(\alpha \notin \mathbb{Q}\).
 \end{defn}
 
+We will also need the notion of a fraction being in lowest terms.
+First we define the greatest common divisor.
+\begin{defn}
+    The greatest common divisor of integers \(a\) and \(b\), not both zero, is an integer
+    \(d\) such that \(d\) divides both \(a\) and \(b\), and \(d\) is greater or equal to every
+    common divisor of \(a\) and \(b\). We write \(\gcd(a, b) = d\).
+\end{defn}
+
+Now we define a fraction being in lowest terms.
+\begin{defn}
+    A fraction \(\frac{m}{n}\) where \(m\) and \(n\) are integers and \(n\) is nonzero is in lowest
+    terms if the greatest common divisor of \(m\) and \(n\) is 1, that is \(\gcd(m, n) = 1\).
+\end{defn}
+
 
 \section{The Proof} \label{sec3}
 \begin{lemma} \label{lemma_div2}
-    If \(2 | n^2\) for \(n \in \mathbb{Z}\), then \(2|n\).
+    If \(n^2\) is even for an integer \(n\), then \(n\) is even.
 
     \begin{proof}
-        We proceed by contrapositive. Let \(n \in \mathbb{Z}\) and assume that \(2 \nmid n\).
-        Then \(n\) is odd, so it can be written as \(n = 2k + 1\) for some \(k \in \mathbb{Z}\).
-        Then \(n^2  = (2k+1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1\). Since \(\mathbb{Z}\) is closed
-        under multiplication and addition, \(2k^2 + 2k \in \mathbb{Z}\). Let \(m = 2k^2 + 2k\).
-        Then \(n^2 = 2m + 1\), so \(n^2\) is odd, and \(2 \nmid n^2\).
-        Thus we have shown by contrapositive that
-        if \(2 | n^2\) for \(n \in \mathbb{Z}\), then \(2|n\).
+        We proceed by contrapositive. Let \(n\) be an integer and assume that \(n\) is not even,
+        so \(n\) is odd.
+        Then \(n\) can be written as \(n = 2k + 1\) for some integer \(k\).
+        Then \(n^2  = (2k+1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1\). Since the integers are closed
+        under multiplication and addition, then \(2k^2 + 2k\) is an integer. Let \(m = 2k^2 + 2k\).
+        Then \(n^2 = 2m + 1\), so \(n^2\) is odd.
+        Thus we have shown by that if \(n\) is odd, then \(n^2\) is odd.
+        By the contrapositive we then have that if \(n^2\) is even, then \(n\) is even.
     \end{proof}
 \end{lemma}
 
@@ -62,30 +77,36 @@ We are finally ready to show our main result.
 
     \begin{proof}
         Let \(\alpha = \sqrt{2}\). Then \(\alpha^2 = 2\).
-        Suppose \(\alpha\) is rational. Then \(\alpha = \frac{m}{n}\), where \(m \in \mathbb{Z}\)
-        and \(n \in \mathbb{N}\), and \(\frac{m}{n}\)
-        is in lowest terms, meaning that \(\gcd(m, n) = 1\). Then \((\frac{m}{n}) ^ 2 = 2\), so
-        \(m^2 = 2n^2\). Then \(2 | m^2\), so by Lemma \ref{lemma_div2}, we have that \(2 | m\).
-        Then \(m = 2m'\) for some \(m' \in \mathbb{Z}\), so \(4m'^2 = 2n^2\), so \(2m'^2 = n^2\).
-        Then \(2 | n^2\), so again by Lemma \ref{lemma_div2}, we have that \(2 | n\).
+        Suppose \(\alpha\) is rational. Then \(\alpha = \frac{m}{n}\), where \(m,n \in \mathbb{Z}\)
+        and \(n \ne 0\).
+        We can also take \(\frac{m}{n}\) to be in lowest terms, meaning that \(\gcd(m, n) = 1\).
+        Then \((\frac{m}{n}) ^ 2 = 2\), so
+        \(m^2 = 2n^2\). Then \(m^2\) is even, so by Lemma \ref{lemma_div2}, we have that \(m\) is even.
+        Then \(m = 2m'\) for some integer \(m'\), so \(4m'^2 = 2n^2\), so \(2m'^2 = n^2\).
+        Then \(n^2\) is even, so again by Lemma \ref{lemma_div2}, we have that \(n\) is even.
         But this is a contradiction because we assumed that \(\frac{m}{n}\) was written in lowest
         terms, that \(m\) and \(n\) share no common divisors greater than 1,
-        but found that both are divisible by
-        \(2\). Thus by contradiction we have shown that \(\sqrt{2}\) is not rational, so it must be irrational.
+        but since \(m\) and \(n\) are both even, then \(2\) is a common divisor of \(m\) and \(n\).
+        Thus by contradiction we have shown that \(\sqrt{2}\) is not rational, so it must be irrational.
     \end{proof}
 \end{thm}
 
 
 \section{Irrational Numbers} \label{sec4}
 
-We know that the square root of any prime number is irrational by generalizing
-Lemma \ref{lemma_div2} into Euclid's Lemma \cite{euclid_wiki}.
+By generalizing Lemma \ref{lemma_div2} using Euclid's Lemma \cite{euclid_wiki}, we can show that
+the square root of any prime number is irrational.
 We also know that transcendental numbers \cite{transcendental_wiki} like \(\pi\) and \(e\)
 are irrational because transcendental numbers are not algebraic, and rational numbers are algebraic.
 
-The Pythagoreans are credited with the discovery that \(\sqrt{2}\) is irrational \cite{sqrt2_wiki}.
+The Pythagoreans, working around the 5th and 6th centuries BC \cite{pythag_wiki},
+are credited with the discovery that \(\sqrt{2}\) is irrational \cite{sqrt2_wiki}.
 Hippasus of Metapontum was said to have drowned at sea for telling those not in the
 Pythagorean Society about the irrationality of \(\sqrt{2}\) \cite{hippasus_wiki}.
+
+Later on, in 1844, Joseph Liouville proved the existence of transcendental numbers. Charles Hermite
+proved that \(e\) is irrational in 1873, and Ferdinand von Lindemann proved that \(\pi\) is irrational
+in 1882 \cite{transcendental_wiki}.
 
 
 \bibliographystyle{plain}
