@@ -46,7 +46,7 @@ Finally, in Section \ref{sec4} we will see some examples of the quadratic formul
 
 \begin{defn}
   The quadratic formula is \[ x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} \]
-  when \(a, b, c \in \mathbb{R}\), \(a \ne 0\), and \(b^2 - 4 a c > 0\) so that the square root
+  when \(a, b, c \in \mathbb{R}\), \(a \ne 0\), and \(b^2 - 4 a c \ge 0\) so that the square root
   is defined.
 \end{defn}
 
@@ -55,13 +55,14 @@ Finally, in Section \ref{sec4} we will see some examples of the quadratic formul
     Let \(a, b, c \in \mathbb{R}\) and \(a \ne 0\).
     Let \(f\) be the quadratic given by \(f(x) = a x^2 + bx + c\).
     Then \(x \in \mathbb{R}\) is a root of \(f\) if and only if \(x\) satisfies the
-    quadratic equation.
+    quadratic formula.
 
     \begin{proof}
         Let \(a, b, c \in \mathbb{R}\) and \(a \ne 0\).
         Let \(f\) be the quadratic given by \(f(x) = a x^2 + bx + c.\) \\
 
-        First we check that if \(x=\frac{-b \pm \sqrt{b^2 - 4 a c}}{2a}\),
+        First we check that if \(x=\frac{-b \pm \sqrt{b^2 - 4 a c}}{2a}\), and \(b^2 - 4ac \ge 0\)
+        so that the square root is defined and \(x \in \mathbb{R}\),
         then \(x\) is a root of \(f\).
 
         Let \(x = \frac{-b + \sqrt{b^2 - 4 a c}}{2a}\).
@@ -85,7 +86,8 @@ Finally, in Section \ref{sec4} we will see some examples of the quadratic formul
              &= 0.
         \end{align*}
 
-        Now we consider the other case. Let \(x = \frac{-b - \sqrt{b^2 - 4 a c}}{2a}\).
+        Now we consider the other root given by the quadratic formula, when
+        \(x = \frac{-b - \sqrt{b^2 - 4 a c}}{2a}\).
         Then we have the following:
 
         \begin{align*}
@@ -119,13 +121,13 @@ Finally, in Section \ref{sec4} we will see some examples of the quadratic formul
           0 &= f(x) \\
             &= ax^2 + bx + c \\
             &= x^2 + \frac{b}{a}x + \frac{c}{a} \\
-            &= x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2x + \frac{c}{a} -
-            \left(\frac{b}{2a}\right)^2 \\
+            &= x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2
+            + \frac{c}{a} \\
           0 &= \left(x + \frac{b}{2a}\right)^2 + \frac{c}{a} - \frac{b^2}{4a^2} \\
           \left(x + \frac{b}{2a}\right)^2 =& \frac{b^2}{4a^2} - \frac{c}{a} \\
           \left(x + \frac{b}{2a}\right)^2 =& \frac{b^2 - 4a c}{4a^2}\\
           x + \frac{b}{2a} =& \pm \sqrt{\frac{b^2 - 4a c}{4a^2}} \\
-          x + \frac{b}{2a} =& \frac{\pm \sqrt{b^2 - 4a c}}{2a} \\
+          x + \frac{b}{2a} =& \frac{\pm \sqrt{b^2 - 4a c}}{2|a|} \\
           x =& \frac{-b \pm \sqrt{b^2 - 4a c}}{2a}.
         \end{align*}
 
@@ -137,7 +139,7 @@ Finally, in Section \ref{sec4} we will see some examples of the quadratic formul
 
         If \(b^2 - 4a c = 0\), then
         \[x = \frac{-b \pm \sqrt{b^2 - 4a c}}{2a} = \frac{-b \pm \sqrt{0}}{2a} = \frac{-b}{2a}\]
-        so the quadratic formula gives us a single real roots.
+        so the quadratic formula gives us a single real root.
 
         Finally, if \(b^2 - 4a c < 0\), then \(\sqrt{b^2 - 4ac}\) is not real, so
         the quadratic has no real roots. \\
@@ -170,7 +172,7 @@ Finally, in Section \ref{sec4} we will see some examples of the quadratic formul
   Now we check:
   \begin{align*}
     f(-1) &= 2(-1)^2 + 6(-1) + 4 = 2 - 6 + 4 = 0 \\
-    f(-2) &= 2(-2)^2 + 6(-2) + 4 = 2(4) - 12 + 4 = 8 - 8 = 0.
+    f(-2) &= 2(-2)^2 + 6(-2) + 4 = 2(4) - 12 + 4 = 8 - 12 + 4 = 0.
   \end{align*}
 
   So we have verified that \(x=-1\) and \(x=-2\) given by the quadratic formula
@@ -298,7 +300,7 @@ Finally, in Section \ref{sec4} we will see some examples of the quadratic formul
       \label{fig:graph3}
   \end{figure}
 
-  Plotting the quadratic in Figure \ref{fig:graph3} we can also see that it indeed has only
+  Plotting the quadratic in Figure \ref{fig:graph3} we can also see that it indeed has
   no real roots (does not touch the x-axis).
 \end{ex}
 
