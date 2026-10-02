@@ -1,0 +1,155 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{amsthm, amsmath, amssymb, graphicx, hyperref, url, pdfpages}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\title{The Quadratic Formula}
+\author{Gordon Chen}
+\date{Fall 2026}
+
+\begin{document}
+\maketitle
+
+\section{Introduction} \label{intro}
+In this short paper we will show the quadratic formula.
+In Section \ref{sec2} we will define some preliminaries related to quadratics and roots.
+In Section \ref{sec3} we will provide a proof of the quadratic formula.
+Finally, in Section \ref{sec4} we will see some examples of the quadratic formula in action.
+
+
+\section{Preliminaries} \label{sec2}
+First, we define a quadratic function.
+
+\begin{defn}
+    A quadratic is a polynomial of degree 2. A quadratic has the following form:
+    \[ f(x) = a x^2 + bx + c, \]
+    where \(a, b, c \in \mathbb{R}\) and \(a \ne 0\).
+\end{defn}
+
+Now we define a root of a quadratic.
+\begin{defn}
+    Let \(x \in \mathbb{R}\). Then \(x\) is a root of the quadratic \(f\) if \(f(x) = 0\).
+\end{defn}
+
+
+\section{Proof} \label{sec3}
+We are finally ready to show our main result.
+
+\begin{thm}
+    Let \(a, b, c \in \mathbb{R}\) and \(a \ne 0\).
+    Let \(f\) be the quadratic given by \(f(x) = a x^2 + bx + c\).
+    Then \(x\) is a root of \(f\) if and only if \[ x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} \]
+    and \(x\) given by the equation is real.
+
+    \begin{proof}
+        Let \(a, b, c \in \mathbb{R}\) and \(a \ne 0\).
+        Let \(f\) be the quadratic given by \[f(x) = a x^2 + bx + c.\]
+
+        First we check that if \(x=\frac{-b \pm \sqrt{b^2 - 4 a c}}{2a}\) and \(x\) is real,
+        then \(x\) is a root of \(f\).
+
+        Let \(x = \frac{-b + \sqrt{b^2 - 4 a c}}{2a}\).
+        Then we have the following:
+        \begin{align*}
+        f(x) &= a \left(\frac{-b + \sqrt{b^2 - 4 a c}}{2a}\right)^2
+                + b \left(\frac{-b + \sqrt{b^2 - 4 a c}}{2a}\right) + c \\
+             &= a \frac{\left(-b + \sqrt{b^2 - 4 a c}\right)^2}{\left(2a\right)^2}
+                + \frac{-b^2 + b\sqrt{b^2 - 4 a c}}{2a} + c \\
+             &= a \frac{b^2 - 2b \sqrt{b^2 - 4 a c} + b^2 - 4 a c}{4a^2}
+                + \frac{-b^2 + b\sqrt{b^2 - 4 a c}}{2a} + c \\
+             &= \frac{2 a b^2 - 2ab \sqrt{b^2 - 4 a c} - 4 a^2 c}{4a^2}
+                + \frac{-b^2 + b\sqrt{b^2 - 4 a c}}{2a} + c \\
+             &= \frac{2 a b^2 - 2ab \sqrt{b^2 - 4 a c} - 4 a^2 c}{4a^2}
+             + \frac{-2ab^2 + 2ab\sqrt{b^2 - 4 a c}}{4a^2} + \frac{4a^2c}{4a^2} \\
+             &= \frac{2 a b^2 - 2ab \sqrt{b^2 - 4 a c} - 4 a^2 c
+                -2ab^2 + 2ab\sqrt{b^2 - 4 a c} + 4a^2c}{4a^2} \\
+             &= \frac{2 a b^2 -2ab^2 + 2ab\sqrt{b^2 - 4 a c} - 2ab \sqrt{b^2 - 4 a c}
+                + 4a^2c  - 4 a^2 c}{4a^2} \\
+             &= \frac{0}{4a^2} \\
+             &= 0. \\
+        \end{align*}
+
+        Now we consider the other case. Let \(x = \frac{-b - \sqrt{b^2 - 4 a c}}{2a}\).
+        Then we have the following:
+
+        \begin{align*}
+        f(x) &= a \left(\frac{-b - \sqrt{b^2 - 4 a c}}{2a}\right)^2
+                + b \left(\frac{-b - \sqrt{b^2 - 4 a c}}{2a}\right) + c \\
+             &= a \frac{\left(-b - \sqrt{b^2 - 4 a c}\right)^2}{\left(2a\right)^2}
+                + \frac{-b^2 - b\sqrt{b^2 - 4 a c}}{2a} + c \\
+             &= a \frac{b^2 + 2b \sqrt{b^2 - 4 a c} + b^2 - 4 a c}{4a^2}
+                + \frac{-b^2 - b\sqrt{b^2 - 4 a c}}{2a} + c \\
+             &= \frac{2 a b^2 + 2ab \sqrt{b^2 - 4 a c} - 4 a^2 c}{4a^2}
+                + \frac{-b^2 - b\sqrt{b^2 - 4 a c}}{2a} + c \\
+             &= \frac{2 a b^2 + 2ab \sqrt{b^2 - 4 a c} - 4 a^2 c}{4a^2}
+             + \frac{-2ab^2 - 2ab\sqrt{b^2 - 4 a c}}{4a^2} + \frac{4a^2c}{4a^2} \\
+             &= \frac{2 a b^2 + 2ab \sqrt{b^2 - 4 a c} - 4 a^2 c
+                -2ab^2 - 2ab\sqrt{b^2 - 4 a c} + 4a^2c}{4a^2} \\
+             &= \frac{2 a b^2 -2ab^2 + 2ab\sqrt{b^2 - 4 a c} - 2ab \sqrt{b^2 - 4 a c}
+                + 4a^2c  - 4 a^2 c}{4a^2} \\
+             &= \frac{0}{4a^2} \\
+             &= 0. \\
+        \end{align*}
+
+        So if \(x = \frac{-b + \sqrt{b^2 - 4 a c}}{2a}\) or
+        \(x = \frac{-b - \sqrt{b^2 - 4 a c}}{2a}\) and \(x\) is real,
+        then \(f(x) = 0\), so \(x\) is a root of \(f\).
+
+        Now we check the other direction, that the only roots of \(f\) are of the form
+        \[x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a}.\]
+
+        We want to solve the equation \(f(x) = 0\). By completing the square, we get
+        the following:
+        \begin{align*}
+          0 &= f(x) \\
+            &= ax^2 + bx + c \\
+            &= x^2 + \frac{b}{a}x + \frac{c}{a} \\
+            &= x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2x + \frac{c}{a} -
+            \left(\frac{b}{2a}\right)^2 \\
+            &= \left(x + \frac{b}{2a}\right)^2 + \frac{c}{a} - \frac{b^2}{4a^2} \\
+          \frac{b^2}{4a^2} - \frac{c}{a} &= \left(x + \frac{b}{2a}\right)^2 \\
+          \frac{b^2 - 4a c}{4a^2} &= \left(x + \frac{b}{2a}\right)^2 \\
+        \end{align*}
+
+        Now we want to take the square root of the LHS so that we can continue to
+        solve for \(x\). However, we now need to consider 3 cases.
+
+        Case 1: \(\frac{b^2 - 4a c}{4a^2} > 0\). Then we are free to take the square root of
+        both sides.
+
+        \begin{align*}
+          \frac{b^2 - 4a c}{4a^2} &= \left(x + \frac{b}{2a}\right)^2 \\
+          \pm \sqrt{\frac{b^2 - 4a c}{4a^2}} &= x + \frac{b}{2a} \\
+          \frac{\pm \sqrt{b^2 - 4a c}}{2a} &= x + \frac{b}{2a} \\
+          \frac{-b \pm \sqrt{b^2 - 4a c}}{2a} &= x\\
+        \end{align*}
+
+        So we have 2 real solutions, \(x = \frac{-b \pm \sqrt{b^2 - 4a c}}{2a}\).
+
+        Case 2: \(\frac{b^2 - 4a c}{4a^2} = 0\).
+
+        \begin{align*}
+          0 &= \left(x + \frac{b}{2a}\right)^2 \\
+        \end{align*}
+
+    \end{proof}
+\end{thm}
+
+
+\section{Examples} \label{sec4}
+
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+% \includepdf[pages=-]{sqrt2_feedback.pdf}
+
+\end{document}
